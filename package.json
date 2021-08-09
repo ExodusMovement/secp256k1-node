@@ -28,13 +28,17 @@
   "browser": {
     "./index.js": "./elliptic.js"
   },
+  "files": [
+    "lib/**/*.js",
+    "elliptic.js",
+    "index.js"
+  ],
   "scripts": {
-    "install": "node-gyp-build || exit 0"
+    "lint": "standard",
+    "test": "tape test/index.js | tap-dot"
   },
   "dependencies": {
-    "elliptic": "^6.5.2",
-    "node-addon-api": "^2.0.0",
-    "node-gyp-build": "^4.2.0"
+    "elliptic": "^6.5.2"
   },
   "devDependencies": {
     "node-gyp": "^5.0.7",
@@ -49,6 +53,5 @@
   },
   "engines": {
     "node": ">=10.0.0"
-  },
-  "gypfile": true
+  }
 }
