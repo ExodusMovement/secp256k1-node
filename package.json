@@ -38,7 +38,8 @@
     "test": "tape test/index.js | tap-dot"
   },
   "dependencies": {
-    "elliptic": "^6.5.2"
+    "elliptic": "^6.5.2",
+    "@bitcoinerlab/secp256k1": "^1.0.5"
   },
   "devDependencies": {
     "node-gyp": "^5.0.7",

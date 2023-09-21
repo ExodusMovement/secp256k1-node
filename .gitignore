@@ -3,6 +3,7 @@ coverage
 build
 node_modules
 prebuilds
+.idea
 
 npm-debug.log
 package-lock.json
