@@ -1,15 +1,11 @@
 let BigIntSupportChecked = false;
-let secp256k1 = require("./lib/elliptic");
+let secp256k1;
 
 if (!BigIntSupportChecked)
   try {
     BigInt(1);
     const noble_secp256k1 = require("@bitcoinerlab/secp256k1");
     secp256k1 = {
-      ...secp256k1,
-      privateKeyNegate: function (seckey) {
-        return noble_secp256k1.privateNegate(seckey);
-      },
       publicKeyCreate: function (privateKey, compressed, output) {
         output = noble_secp256k1.pointFromScalar(privateKey, compressed);
         return output;
@@ -21,15 +17,18 @@ if (!BigIntSupportChecked)
         output = noble_secp256k1.isPoint(publicKey, compressed);
         return output;
       },
+      publicKeyTweakAdd: function (publicKey, tweak, compressed = true, output) {
+        log({publicKey, tweak, compressed})
+        return noble_secp256k1.pointAddScalar(publicKey, tweak, compressed);
+      },
+      privateKeyNegate: function (seckey) {
+        return noble_secp256k1.privateNegate(seckey);
+      },
       privateKeyVerify: function (privateKey) {
         return noble_secp256k1.isPrivate(privateKey);
       },
       privateKeyTweakAdd: function (privateKey, tweak) {
         return noble_secp256k1.privateAdd(privateKey, tweak);
-      },
-      publicKeyTweakAdd: function (publicKey, tweak, compressed, output) {
-        output = noble_secp256k1.pointAddScalar(publicKey, tweak, compressed);
-        return output;
       },
       ecdsaVerify: function (sig, msg32, pubkey) {
         return noble_secp256k1.verify(msg32, pubkey, sig);
@@ -39,5 +38,5 @@ if (!BigIntSupportChecked)
   } finally {
     BigIntSupportChecked = true;
   }
-
-module.exports = require("./lib")(secp256k1);
+  
+module.exports = secp256k1 || require("./lib")(require("./lib/elliptic"));
