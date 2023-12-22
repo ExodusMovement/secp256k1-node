@@ -42,7 +42,6 @@ if (!BigIntSupportChecked)
       },
     };
   } catch (e) {
-    log("erorr", e);
   } finally {
     BigIntSupportChecked = true;
   }
