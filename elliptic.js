@@ -17,8 +17,12 @@ if (!BigIntSupportChecked)
         output = noble_secp256k1.isPoint(publicKey, compressed);
         return output;
       },
-      publicKeyTweakAdd: function (publicKey, tweak, compressed = true, output) {
-        log({publicKey, tweak, compressed})
+      publicKeyTweakAdd: function (
+        publicKey,
+        tweak,
+        compressed = true,
+        output
+      ) {
         return noble_secp256k1.pointAddScalar(publicKey, tweak, compressed);
       },
       privateKeyNegate: function (seckey) {
@@ -33,10 +37,14 @@ if (!BigIntSupportChecked)
       ecdsaVerify: function (sig, msg32, pubkey) {
         return noble_secp256k1.verify(msg32, pubkey, sig);
       },
+      ecdsaSign: function (msg32, seckey, options = {}, output) {
+        return { signature: secp256k1.sign(msg32, seckey) };
+      },
     };
   } catch (e) {
+    log("erorr", e);
   } finally {
     BigIntSupportChecked = true;
   }
-  
+
 module.exports = secp256k1 || require("./lib")(require("./lib/elliptic"));
