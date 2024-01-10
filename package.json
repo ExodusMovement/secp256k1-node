@@ -9,11 +9,11 @@
     "secp256k1"
   ],
   "bugs": {
-    "url": "https://github.com/cryptocoinjs/secp256k1-node/issues"
+    "url": "https://github.com/ExodusMovement/secp256k1-node/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cryptocoinjs/secp256k1-node.git"
+    "url": "https://github.com/ExodusMovement/secp256k1-node.git"
   },
   "license": "MIT",
   "author": "Martin Becze <mjbecze@gmail.com>",
@@ -38,7 +38,7 @@
     "test": "tape test/index.js | tap-dot"
   },
   "dependencies": {
-    "@bitcoinerlab/secp256k1": "^1.0.5",
+    "@exodus/bitcoinerlab-secp256k1": "^1.0.5-exodus.1",
     "elliptic": "^6.5.2"
   },
   "devDependencies": {

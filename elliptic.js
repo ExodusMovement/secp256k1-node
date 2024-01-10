@@ -4,7 +4,7 @@ let secp256k1;
 if (!BigIntSupportChecked)
   try {
     BigInt(1);
-    const noble_secp256k1 = require("@bitcoinerlab/secp256k1");
+    const noble_secp256k1 = require("@exodus/bitcoinerlab-secp256k1");
     secp256k1 = {
       publicKeyCreate: function (privateKey, compressed, output) {
         output = noble_secp256k1.pointFromScalar(privateKey, compressed);
