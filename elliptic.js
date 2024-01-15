@@ -48,6 +48,9 @@ if (!BigIntSupportChecked)
         compressed = true,
         output
       ) {
+        if (output) {
+          throw new Error("publicKeyTweakAdd | output param not handled");
+        }
         return noble_secp256k1.pointAddScalar(publicKey, tweak, compressed);
       },
       publicKeyTweakMul: function (publicKey, tweak, compressed, ouput) {
