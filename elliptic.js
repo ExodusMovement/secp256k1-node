@@ -13,7 +13,7 @@ if (!BigIntSupportChecked)
         return noble_secp256k1.isPrivate(privateKey);
       },
       privateKeyNegate: function (privateKey) {
-        return noble_secp256k1.privateNegate(seckey);
+        return noble_secp256k1.privateNegate(privateKey);
       },
       privateKeyTweakAdd: function (privateKey, tweak) {
         return noble_secp256k1.privateAdd(privateKey, tweak);
