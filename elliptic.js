@@ -1,14 +1,15 @@
-let BigIntSupportChecked = false;
-let secp256k1;
+let BigIntSupportChecked = false
+let secp256k1
 
-if (!BigIntSupportChecked)
+if (!BigIntSupportChecked) {
   try {
-    BigInt(1);
-    secp256k1 = require("./lib/bitcoinerlab")
+    BigInt(1)
+    secp256k1 = require('./lib')(require('./lib/bitcoinerlab'), true)
   } catch (e) {
-    secp256k1 = require("./lib/elliptic")
+    secp256k1 = require('./lib')(require('./lib/elliptic'))
   } finally {
-    BigIntSupportChecked = true;
+    BigIntSupportChecked = true
   }
+}
 
-module.exports = require("./lib")(secp256k1);
+module.exports = secp256k1
