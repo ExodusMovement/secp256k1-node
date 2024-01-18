@@ -17,3 +17,4 @@ function testAPI (secp256k1, description) {
 }
 
 testAPI(require('../elliptic'), 'elliptic')
+testAPI(require('../bitcoinerlab'), 'bitcoinerlab')
