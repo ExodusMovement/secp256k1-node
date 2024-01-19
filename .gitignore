@@ -9,3 +9,4 @@ package-lock.json
 secp256k1-*.tgz
 yarn-error.log
 yarn.lock
+.DS_Store
