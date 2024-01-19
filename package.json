@@ -25,9 +25,6 @@
     "Kirill Fomichev <fanatid@ya.ru> (https://github.com/fanatid)"
   ],
   "main": "./index.js",
-  "browser": {
-    "./index.js": "./elliptic.js"
-  },
   "files": [
     "lib/**/*.js",
     "bitcoinerlab.js",
