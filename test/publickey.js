@@ -181,6 +181,20 @@ module.exports = (t, secp256k1) => {
       t.end()
     })
 
+    t.test('Test custom public key conversion', (t) => {
+      const publicKey = Buffer.from('021289b7ad4577f8c9d01c16e16c8bd08b3e702d678dea65c1b312f4ef8789fa11', 'hex')
+      const result = secp256k1.publicKeyConvert(publicKey, false)
+      t.same(result, [
+        4, 18, 137, 183, 173, 69, 119, 248, 201, 208, 28,
+        22, 225, 108, 139, 208, 139, 62, 112, 45, 103, 141,
+        234, 101, 193, 179, 18, 244, 239, 135, 137, 250, 17,
+        199, 0, 62, 67, 146, 185, 40, 109, 195, 249, 164,
+        41, 166, 212, 7, 220, 214, 212, 221, 163, 173, 197,
+        81, 116, 38, 182, 223, 56, 98, 233, 39, 74
+      ], 'Converted public key should match')
+      t.end()
+    })
+
     t.test('special tests for cover loadPublicKey', (t) => {
       const p = util.ec.curve.p.toArray('be', 32)
       const one = util.BN_ONE.toArray('be', 32)
