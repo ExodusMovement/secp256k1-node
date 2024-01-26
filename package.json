@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@exodus/bitcoinerlab-secp256k1": "^1.0.5-exodus.1",
+    "@noble/secp256k1": "1.7.1",
     "elliptic": "^6.5.2"
   },
   "devDependencies": {
