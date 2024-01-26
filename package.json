@@ -27,7 +27,7 @@
   "main": "./index.js",
   "files": [
     "lib/**/*.js",
-    "bitcoinerlab.js",
+    "noble.js",
     "elliptic.js",
     "index.js"
   ],
