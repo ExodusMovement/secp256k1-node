@@ -5,6 +5,9 @@ on: [push, pull_request]
 env:
   CI: true
 
+permissions:
+  contents: read
+
 jobs:
   build-and-test:
     name: Build addon and run tests
