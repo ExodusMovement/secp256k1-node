@@ -1,6 +1,6 @@
 {
   "name": "@exodus/secp256k1",
-  "version": "5.0.0-exodus.4",
+  "version": "5.0.0-hybrid.0",
   "description": "This module provides native bindings to ecdsa secp256k1 functions",
   "keywords": [
     "ec",
