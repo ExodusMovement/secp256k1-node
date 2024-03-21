@@ -36,8 +36,8 @@
     "test": "tape test/index.js | tap-dot"
   },
   "dependencies": {
-    "@exodus/bitcoinerlab-secp256k1": "^1.0.6-rc.1",
     "@noble/secp256k1": "^1.7.1",
+    "@noble/hashes": "^1.1.5",
     "elliptic": "^6.5.2"
   },
   "devDependencies": {
