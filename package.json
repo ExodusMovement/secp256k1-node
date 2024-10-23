@@ -43,7 +43,7 @@
     "node-gyp": "^5.0.7",
     "nyc": "^15.0.0",
     "prebuildify": "^3.0.4",
-    "prebuildify-cross": "github:prebuild/prebuildify-cross#v4.0.0",
+    "prebuildify-cross": "^5.1.1",
     "standard": "^14.3.1",
     "tap-dot": "^2.0.0",
     "tape": "^4.10.1",
